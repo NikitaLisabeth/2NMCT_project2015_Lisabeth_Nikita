@@ -42,7 +42,7 @@ public class TheatreProvider {
         private String location;*/
         theatresWestEnd = new ArrayList<>();
         Theatre AldwychTheatre = new Theatre("Aldwych Theatre",
-                " 49 Aldwych, London, WC2B 4DF","Beautiful",
+                " 49 Aldwych, London, WC2B 4DF","Beautiful, the Carol King Musical",
                 "You go out of the theatre. Go left into Dury Lane. At your left side you find the stagedoor.",
                 "https://www.google.be/maps/place/Aldwych+Theatre/@51.512946,-0.118634,17z/data=!3m1!4b1!4m2!3m1!1s0x487604ca8ff4f43b:0xcee9dd4da02ea67e");
         theatresWestEnd.add(AldwychTheatre);

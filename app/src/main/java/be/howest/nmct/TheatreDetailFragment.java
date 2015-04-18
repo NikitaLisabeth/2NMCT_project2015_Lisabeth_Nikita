@@ -33,6 +33,7 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
     private TextView tvCurrentMusical;
     private TextView tvTheatreName;
     private TextView tvStagedoor;
+    private TextView tvAddress;
     private ImageView imgTheatre;
     private Button btnNavigate;
     private CursorAdapter mAdapter;
@@ -57,11 +58,12 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
         tvCurrentMusical = (TextView) v.findViewById(R.id.tvDetailCurrentMusical);
         tvTheatreName = (TextView) v.findViewById(R.id.tvDetailTheatreName);
         tvStagedoor = (TextView) v.findViewById(R.id.tvDetailStageDoor);
+        tvAddress = (TextView) v.findViewById(R.id.tvDetailAddress);
         imgTheatre = (ImageView) v.findViewById(R.id.imgDetailTheatre);
         btnNavigate = (Button) v.findViewById(R.id.btnDetailNavigate);
         tvTheatreName.setText(getArguments().getString(ARG_THEATRE_NAME));
         showImage(tvTheatreName.getText().toString());
-        btnNavigate.setBackgroundColor(Color.parseColor("#BD0000"));
+       /* btnNavigate.setBackgroundColor(Color.parseColor("#BD0000"));*/
         btnNavigate.setTextColor(Color.parseColor("#ffffff"));
         return v;
     }
@@ -117,6 +119,7 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
 
         tvCurrentMusical.setText(selectedTheatre.getCurrentMusical());
         tvStagedoor.setText(selectedTheatre.getStageDoor());
+        tvAddress.setText(selectedTheatre.getAddress());
     }
 
     @Override
