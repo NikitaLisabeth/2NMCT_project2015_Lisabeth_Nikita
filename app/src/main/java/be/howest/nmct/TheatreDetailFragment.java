@@ -1,6 +1,7 @@
 package be.howest.nmct;
 
 
+import android.app.Activity;
 import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Loader;
@@ -37,8 +38,9 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
     private ImageView imgTheatre;
     private Button btnNavigate;
     private CursorAdapter mAdapter;
-
+    private OnTheatreDetailsFragmentListener onTheatreDetailsFragmentListener;
     public static final String ARG_THEATRE_NAME = "theatre_name";
+
     public TheatreDetailFragment() {
         // Required empty public constructor
     }
@@ -48,6 +50,16 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
         args.putString(ARG_THEATRE_NAME, sTheatreName);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            onTheatreDetailsFragmentListener = (OnTheatreDetailsFragmentListener) activity;
+        } catch (ClassCastException ex){
+            throw new ClassCastException(activity.toString() + " implement interface OnClubListFragmentListener");
+        }
     }
 
     @Override
@@ -65,6 +77,16 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
         showImage(tvTheatreName.getText().toString());
        /* btnNavigate.setBackgroundColor(Color.parseColor("#BD0000"));*/
         btnNavigate.setTextColor(Color.parseColor("#ffffff"));
+
+        btnNavigate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(onTheatreDetailsFragmentListener != null){
+                    onTheatreDetailsFragmentListener.onSelectTheatreDetail(tvTheatreName.getText().toString());
+                }
+            }
+        });
+
         return v;
     }
     public void showImage(String theatreName){
@@ -109,8 +131,9 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
                 imgTheatre.setImageResource(R.drawable.comedytragedy);
                 break;
         }
-
     }
+
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
@@ -136,5 +159,8 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mAdapter.swapCursor(null);
+    }
+    public interface OnTheatreDetailsFragmentListener {
+        public void onSelectTheatreDetail(String name);
     }
 }

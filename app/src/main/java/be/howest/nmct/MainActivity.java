@@ -14,7 +14,7 @@ import android.view.Window;
 import android.widget.TextView;
 
 
-public class MainActivity extends Activity implements TheatreListFragment.OnTheatresFragmentListener {
+public class MainActivity extends Activity implements TheatreListFragment.OnTheatresFragmentListener, TheatreDetailFragment.OnTheatreDetailsFragmentListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +65,18 @@ public class MainActivity extends Activity implements TheatreListFragment.OnThea
         fragmentTransaction.replace(R.id.container, fragment2);
 
         fragmentTransaction.addToBackStack("showDetailTheatre");
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onSelectTheatreDetail(String name) {
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        TheatreMapFragment fragment3 = TheatreMapFragment.newInstance(name);
+        fragmentTransaction.replace(R.id.container, fragment3);
+
+        fragmentTransaction.addToBackStack("showMapTheatre");
         fragmentTransaction.commit();
     }
 }
