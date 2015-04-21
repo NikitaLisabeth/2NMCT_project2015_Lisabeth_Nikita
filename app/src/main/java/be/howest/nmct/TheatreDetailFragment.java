@@ -127,6 +127,12 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
             case "Piccadilly Theatre":
                 imgTheatre.setImageResource(R.drawable.jerseyboysbanner);
                 break;
+            case "Shaftesbury Theatre":
+                imgTheatre.setImageResource(R.drawable.memphisbanner);
+                break;
+            case "Cambridge Theatre":
+                imgTheatre.setImageResource(R.drawable.mathildabanner);
+                break;
             default:
                 imgTheatre.setImageResource(R.drawable.comedytragedy);
                 break;

@@ -106,6 +106,18 @@ public class TheatreProvider {
                 "Go left, take the first street left (Denman Street). Go right until you see a black fence. That's the stagedoor.",
                 "https://www.google.be/maps/place/Piccadilly+Theatre/@51.5108825,-0.1355742,19z/data=!4m2!3m1!1s0x487604d40c2fdf67:0xa14df20866754e24");
         theatresWestEnd.add(PiccadillyTheatre);
+        Theatre ShaftesburyTheatre = new Theatre("Shaftesbury Theatre",
+                "210 Shaftesbury Avenue, London, WC2H 8DP",
+                "Memphis",
+                "Go outside the theatre and take High Holhorn. Take the first street at your left side. Just around the corner is the stagedoor.",
+                "https://www.google.be/maps/place/Shaftesbury+Theatre/@51.516019,-0.126005,19z/data=!3m1!4b1!4m2!3m1!1s0x48761b33273bdb3f:0x329f1539a0a2a852");
+         theatresWestEnd.add(ShaftesburyTheatre);
+        Theatre CambridgeTheatre = new Theatre("Cambridge Theatre",
+                "32-34 Earlham Street, London, WC2H 9HU",
+                "Matilda",
+                "Go outside the theatre and take Mercer Street. Take the first street at your left side (Shelton Street). Just around the corner is the stagedoor.",
+                "https://www.google.be/maps/place/Cambridge+Theatre/@51.513598,-0.126751,17z/data=!3m1!4b1!4m2!3m1!1s0x487604cd22649fd3:0x15bf1aa0a9b2bb01");
+        theatresWestEnd.add(CambridgeTheatre);
 
         Collections.sort(theatresWestEnd, new Comparator<Theatre>() {
             @Override

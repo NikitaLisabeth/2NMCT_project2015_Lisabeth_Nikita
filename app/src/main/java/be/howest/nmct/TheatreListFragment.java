@@ -159,6 +159,12 @@ public class TheatreListFragment  extends ListFragment implements LoaderManager.
                 case "Piccadilly Theatre":
                     imgTheatre.setImageResource(R.drawable.jerseyboys);
                     break;
+                case "Shaftesbury Theatre":
+                    imgTheatre.setImageResource(R.drawable.memphis);
+                    break;
+                case "Cambridge Theatre":
+                    imgTheatre.setImageResource(R.drawable.mathilda);
+                    break;
                 default:
                     imgTheatre.setImageResource(R.drawable.comedytragedy);
                     break;

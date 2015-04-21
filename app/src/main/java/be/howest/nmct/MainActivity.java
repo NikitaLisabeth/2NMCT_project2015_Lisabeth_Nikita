@@ -24,10 +24,7 @@ public class MainActivity extends Activity implements TheatreListFragment.OnThea
             getFragmentManager().beginTransaction()
                     .add(R.id.container, new TheatreListFragment())
                     .commit();
-           /* ActionBar bar = getActionBar();
-            bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#BD0000")));
-            bar.setTitle(Html.fromHtml("<font color='#ffffff'>West End Theatres </font>"));
-            */
+            ActionBar ab = getActionBar();
         }
     }
 
