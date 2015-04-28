@@ -1,5 +1,7 @@
 package be.howest.nmct.Model;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import javax.xml.namespace.NamespaceContext;
 
 /**
@@ -10,14 +12,14 @@ public class Theatre {
     private String address;
     private String currentMusical;
     private String stageDoor;
-    private String location;
+    private LatLng location;
 
-    public Theatre (String name, String address, String currentMusical, String stageDoor, String location){
+    public Theatre (String name, String address, String currentMusical, String stageDoor, LatLng location){
         this.name = name;
         this.address = address;
         this.currentMusical = currentMusical;
         this.stageDoor = stageDoor;
-        this.location = stageDoor;
+        this.location = location;
     }
 
     public String getName(){return name;}
@@ -30,7 +32,7 @@ public class Theatre {
     public String getStageDoor() {
         return stageDoor;
     }
-    public String getLocation() {
+    public LatLng getLocation() {
         return location;
     }
 
