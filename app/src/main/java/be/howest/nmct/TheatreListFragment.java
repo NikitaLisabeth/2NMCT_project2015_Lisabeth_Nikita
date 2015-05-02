@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -32,6 +33,7 @@ public class TheatreListFragment  extends ListFragment implements LoaderManager.
     private TheatreAdapter mAdapter;
     private OnTheatresFragmentListener mListener;
     public static ImageView imgTheatre;
+    public static Button btnSeeAll;
     private OnTheatresFragmentListener onTheatresFragmentListener;
 
     public TheatreListFragment() {
@@ -82,7 +84,6 @@ public class TheatreListFragment  extends ListFragment implements LoaderManager.
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_theatre_list, container, false);
-
         return v;
     }
 
@@ -169,7 +170,6 @@ public class TheatreListFragment  extends ListFragment implements LoaderManager.
                     imgTheatre.setImageResource(R.drawable.comedytragedy);
                     break;
             }
-
         }
     }
 

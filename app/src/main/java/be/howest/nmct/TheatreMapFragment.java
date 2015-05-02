@@ -8,6 +8,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,30 +58,38 @@ public class TheatreMapFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        selectedTheatre = TheatreProvider.getTheatresWestEnd(getArguments().getString(ARG_THEATRE_NAME));
+        public void onActivityCreated(Bundle savedInstanceState) {
+            super.onActivityCreated(savedInstanceState);
+            selectedTheatre = TheatreProvider.getTheatresWestEnd(getArguments().getString(ARG_THEATRE_NAME));
 
-        tvTheatre.setText(selectedTheatre.getName());
-        tvAddress.setText(selectedTheatre.getAddress());
-        Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
-        MarkerOptions marker = new MarkerOptions().position(
-                new LatLng(selectedTheatre.getLocation().latitude,selectedTheatre.getLocation().longitude))
-                .title(selectedTheatre.getName())
-                .snippet(selectedTheatre.getAddress());
-        marker.icon(BitmapDescriptorFactory
-                .fromResource(R.drawable.pin));
-        googleMap.addMarker(marker);
+            tvTheatre.setText(selectedTheatre.getName());
+            tvAddress.setText(selectedTheatre.getAddress());
+
+            Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
+
+            MarkerOptions marker = new MarkerOptions().position(
+                    new LatLng(selectedTheatre.getLocation().latitude,selectedTheatre.getLocation().longitude))
+                    .title(selectedTheatre.getName())
+                    .snippet(selectedTheatre.getAddress());
+            marker.icon(BitmapDescriptorFactory
+                    .fromResource(R.drawable.pin));
+            googleMap.addMarker(marker);
+
+
         /*Polyline line = googleMap.addPolyline(new PolylineOptions()
                 .add(selectedTheatre.getLocation(), new LatLng(40.7, -74.0))
                 .width(5)
                 .color(Color.RED));*/
-        CameraPosition cameraPosition = new CameraPosition.Builder().target(selectedTheatre.getLocation()).zoom(15).build();
-        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(selectedTheatre.getLocation()).zoom(15).build();
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         googleMap.getUiSettings().setZoomControlsEnabled(true);
+        googleMap.setMyLocationEnabled(true);
+        googleMap.setIndoorEnabled(true);
         googleMap.getUiSettings().setMyLocationButtonEnabled(true);
         googleMap.getUiSettings().setMapToolbarEnabled(true);
-        googleMap.getUiSettings().setIndoorLevelPickerEnabled(true);
+        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
 
 
@@ -132,6 +141,4 @@ public class TheatreMapFragment extends Fragment {
         super.onLowMemory();
         mMapView.onLowMemory();
     }
-
-
 }

@@ -37,11 +37,6 @@ public class TheatreProvider {
     }
 
     private void loadTheatres(){
-        /*private String name;
-        private String address;
-        private String currentMusical;
-        private String stageDoor;
-        private LatLng location;*/
         theatresWestEnd = new ArrayList<>();
         Theatre AldwychTheatre = new Theatre("Aldwych Theatre",
                 " 49 Aldwych, London, WC2B 4DF","Beautiful, the Carol King Musical",

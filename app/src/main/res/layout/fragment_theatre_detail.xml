@@ -6,7 +6,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="152dp"
         android:id="@+id/imgDetailTheatre"
         android:src="@drawable/beautifulbanner"
         android:layout_alignParentStart="true"
@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Theatre Name"
+        android:text="@string/TheatreName"
         android:gravity="center"
         android:id="@+id/tvDetailTheatreName"
         android:layout_below="@+id/imgDetailTheatre"
@@ -28,7 +28,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find on the map"
+        android:text="@string/FindOnTheMap"
         android:id="@+id/btnDetailNavigate"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="18dp"
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Current Musical"
+        android:text="@string/CurrentMusical"
         android:gravity="center"
         android:id="@+id/tvDetailCurrentMusical"
         android:layout_below="@+id/tvDetailTheatreName"
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Where to find the stagedoor?"
+        android:text="@string/WhereToFindTheStageDoor"
         android:id="@+id/tvDetailLabelStageDoor"
         android:layout_marginTop="35dp"
         android:layout_marginLeft="10dp"
@@ -66,7 +66,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Turn left and walk down Argyll Street towards Liberty. When you reach Liberty, turn a left and walk down the street past the massive sign adversity the show currently running at the theatre, until you read the iron gates marked: ‘LONDON PALLADIUM’.&quot;,"
+        android:text="@string/Routebeschrijving"
         android:id="@+id/tvDetailStageDoor"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -76,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Address of the theatre:"
+        android:text="@string/AddressOfTheTheatre"
         android:layout_marginTop="10dp"
         android:id="@+id/tvDetailLabelAddress"
         android:layout_below="@+id/tvDetailStageDoor"
@@ -85,7 +85,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Address of the theatre"
+        android:text="@string/AddressOfTheTheatre"
         android:id="@+id/tvDetailAddress"
         android:layout_below="@+id/tvDetailLabelAddress"
         android:layout_alignStart="@+id/tvDetailLabelAddress" />

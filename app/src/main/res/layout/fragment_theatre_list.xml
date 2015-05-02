@@ -9,14 +9,12 @@
         android:id="@+id/textViewChoose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose the theatre:"
-        android:layout_marginTop="10dp"
+        android:text="@string/ChooseTheTheatre"
         style="?android:attr/listSeparatorTextViewStyle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="16dp" />
-
+        android:textSize="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 
     <ListView
         android:layout_marginLeft="10dp"

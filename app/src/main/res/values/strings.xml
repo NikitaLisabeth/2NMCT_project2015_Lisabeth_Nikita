@@ -7,5 +7,17 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Address">Address</string>
     <string name="colorTextActionBar">0xFFFF6666</string>
+    <string name="TheatreName">Theatre Name</string>
+    <string name="FindOnTheMap">Find on the map</string>
+    <string name="CurrentMusical">Current Musical</string>
+    <string name="WhereToFindTheStageDoor">Where to find the stagedoor?</string>
+    <string name="Routebeschrijving">Turn left and walk down Argyll Street towards Liberty. When you reach Liberty, turn a left and walk down the street past the massive sign adversity the show currently running at the theatre, until you read the iron gates marked: ‘LONDON PALLADIUM’.\",</string>
+    <string name="AddressOfTheTheatre">Address of the theatre:</string>
+    <string name="ChooseTheTheatre">Choose the theatre:</string>
+    <string name="Theatre">Theatre</string>
+    <string name="Comma">,</string>
+    <string name="CurrentTheatre">Current theatre:</string>
+    <string name="or">or</string>
+    <string name="seeallonmap">See all theatres on a map</string>
 
 </resources>

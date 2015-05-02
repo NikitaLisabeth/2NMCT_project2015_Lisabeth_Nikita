@@ -54,7 +54,7 @@ public class MainActivity extends Activity implements TheatreListFragment.OnThea
     }
 
     @Override
-    public void onSelectTheatre(String name) {
+    public void onSelectTheatre(String name ) {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
