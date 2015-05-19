@@ -84,11 +84,17 @@ public class TheatreMapFragment extends Fragment {
 
             CameraPosition cameraPosition = new CameraPosition.Builder().target(selectedTheatre.getLocation()).zoom(15).build();
             googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        //zoomknoppen aanzetten
         googleMap.getUiSettings().setZoomControlsEnabled(true);
+        //zet een blauw bolletje op uw locatie
         googleMap.setMyLocationEnabled(true);
+        //toelating voor de indoor maps te gebruiken.
         googleMap.setIndoorEnabled(true);
+        //zet de button aan om naar uw locatie te gaan
         googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        //zet buttons aan om te openen in google maps zelf
         googleMap.getUiSettings().setMapToolbarEnabled(true);
+        //soort kaart
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
 

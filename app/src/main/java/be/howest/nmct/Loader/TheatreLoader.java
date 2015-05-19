@@ -17,7 +17,7 @@ public class TheatreLoader extends AsyncTaskLoader<Cursor> {
     public TheatreLoader(Context context) {
         super(context);
     }
-    private Cursor mCursor;
+    public static Cursor mCursor;
     private final String[] mColumnNames = new String[]{
             BaseColumns._ID,
             Contract.TheatreColumns.COLUMN_THEATRE_NAME,

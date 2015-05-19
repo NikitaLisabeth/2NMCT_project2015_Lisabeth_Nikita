@@ -30,7 +30,7 @@ import be.howest.nmct.Loader.TheatreLoader;
  * A simple {@link Fragment} subclass.
  */
 public class TheatreListFragment  extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor>  {
-    private TheatreAdapter mAdapter;
+    public TheatreAdapter mAdapter;
     private OnTheatresFragmentListener mListener;
     public static ImageView imgTheatre;
     public static Button btnSeeAll;
@@ -45,10 +45,12 @@ public class TheatreListFragment  extends ListFragment implements LoaderManager.
         super.onAttach(activity);
         try {
             onTheatresFragmentListener = (OnTheatresFragmentListener) activity;
-        } catch (ClassCastException ex){
+        } catch (ClassCastException ex) {
             throw new ClassCastException(activity.toString() + " implement interface OnClubListFragmentListener");
         }
+
     }
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {

@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -50,6 +52,12 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
         args.putString(ARG_THEATRE_NAME, sTheatreName);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
     }
 
     @Override
@@ -144,7 +152,8 @@ public class TheatreDetailFragment extends Fragment implements LoaderManager.Loa
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        Theatre selectedTheatre = TheatreProvider.getTheatresWestEnd(getArguments().getString(ARG_THEATRE_NAME));
+        Theatre selectedTheatre = TheatreProvider.getTheatresWestEnd(getArguments()
+                .getString(ARG_THEATRE_NAME));
 
         tvCurrentMusical.setText(selectedTheatre.getCurrentMusical());
         tvStagedoor.setText(selectedTheatre.getStageDoor());
